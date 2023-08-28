@@ -2,7 +2,7 @@ from time import sleep
 
 from textual import on, work
 from textual.app import App, ComposeResult, events
-from textual.widgets import Footer, RichLog
+from textual.widgets import Footer, Log
 
 
 def long_blocking_process() -> None:
@@ -13,12 +13,10 @@ def long_blocking_process() -> None:
     print("Creating")
 
 
-class OutputLog(RichLog):
+class OutputLog(Log):
     @on(events.Print)
     def on_print(self, event: events.Print) -> None:
-        # Prevent blank lines in the log
-        if event.text.strip():
-            self.write(event.text)
+        self.write(event.text)
 
 
 class WorkerWithCapturePrintApp(App):
