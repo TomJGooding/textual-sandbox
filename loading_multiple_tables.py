@@ -57,7 +57,6 @@ class TableApp(App):
         ]
         table = self.query_one("#table-one", DataTable)
         table.border_title = "Table One"
-        table.display = True
         rows = iter(data)
         table.add_columns(*next(rows))
         table.add_rows(rows)
@@ -75,7 +74,6 @@ class TableApp(App):
         ]
         table = self.query_one("#table-two", DataTable)
         table.border_title = "Table Two"
-        table.display = True
         rows = iter(data)
         table.add_columns(*next(rows))
         table.add_rows(rows)
@@ -93,7 +91,6 @@ class TableApp(App):
         ]
         table = self.query_one("#table-three", DataTable)
         table.border_title = "Table Three"
-        table.display = True
         rows = iter(data)
         table.add_columns(*next(rows))
         table.add_rows(rows)
@@ -111,7 +108,6 @@ class TableApp(App):
         ]
         table = self.query_one("#table-four", DataTable)
         table.border_title = "Table Four"
-        table.display = True
         rows = iter(data)
         table.add_columns(*next(rows))
         table.add_rows(rows)
