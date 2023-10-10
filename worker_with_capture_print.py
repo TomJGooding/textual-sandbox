@@ -13,7 +13,7 @@ def long_blocking_process() -> None:
     print("Creating")
 
 
-class OutputLog(Log):
+class PrintLogger(Log):
     @on(events.Print)
     def on_print(self, event: events.Print) -> None:
         self.write(event.text)
